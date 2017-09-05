@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:alpha="0.9">
+
+        <RelativeLayout
+            android:id="@+id/circuitInfo"
+            android:gravity="bottom"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCircuitName"
+                android:gravity="center_horizontal"
+                android:text="Circuit Name"
+                android:textColor="@color/colorTextClear"
+                android:textSize="38dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCountry"
+                android:layout_below="@+id/tvCircuitName"
+                android:gravity="center_horizontal"
+                android:text="Country"
+                android:textSize="24dp"
+                android:textColor="@color/colorTextClear"/>
+
+        </RelativeLayout>
+
+</LinearLayout>
