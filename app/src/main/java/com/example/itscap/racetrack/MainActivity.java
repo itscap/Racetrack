@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity implements TrackAsyncTask.IH
         trackAsyncTask = new TrackAsyncTask(this);
         trackAsyncTask.getTracks();
 
-        String key = new ApiKeyHelper(this).getApiKeyValue("maps");
-        Log.d(TAG, "onCreate: KEY = " + key);
     }
 
 
@@ -54,9 +52,8 @@ public class MainActivity extends AppCompatActivity implements TrackAsyncTask.IH
 
         if (tracks != null && tracks.size() > 0) {
 
-            TrackAdapter calendarAdapter = new TrackAdapter(context,tracks);
-
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context, LinearLayout.HORIZONTAL, false);
+            TrackAdapter calendarAdapter = new TrackAdapter(context,(LinearLayoutManager) mLayoutManager, tracks);
             recyclerView.setLayoutManager(mLayoutManager);
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             recyclerView.setAdapter(calendarAdapter);

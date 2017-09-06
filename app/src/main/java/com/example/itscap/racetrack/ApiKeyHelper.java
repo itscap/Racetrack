@@ -1,19 +1,15 @@
 package com.example.itscap.racetrack;
 
 import android.content.Context;
-import android.util.JsonReader;
 import android.util.Log;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by itscap on 9/6/17.
+ *
+ * We actually don't need this but i just wanted to do some tests
  */
 
 public class ApiKeyHelper {
