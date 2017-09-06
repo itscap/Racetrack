@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_3b249bb706253f20d9b1b9cd6d960b1f26548eb6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/0a48f94a9c31f514a6bf81d3ff322ba13d75d736/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4677dd6ae48e7239b13499716144854fc492e6ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/ee47f09cb434beb743e2b30846c3021c77eeebc3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2b06cf62760716b759864041748445cc928613ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/b9ee11973b133dc9e3e30bf7e773f31fe0cf126d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bba80c01053f43d793f9a03854ba3672275cfe8a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.0-alpha1_dd30f319dc3079d330b121f00220f4299ef022ea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_992d7806fea21cba9546ea6e91bea47f6326e7b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/2e943629d7f57aa3abf1b102d9463e12ea483b8b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d72a5096f3e2a0ce4a4b23312e6c7c00777e7ea6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/0e3f39b0ae3e85a7f527ac2ada49d1a9ea555227/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_215e1e9a296a1e2b051c91715999eb3108bcf58b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8920e803916fad75f79ef734e62fe55fbbc3d648">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7876ef75be735c74aa2f0e9905fafa8475a9c7b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/313e1fab54d9476cbe12049db8ce0f8a6e8b295e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bcdb1b2772438e93c1b028010da284b3a955c743/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/486b565eac4b5652bdefb500cbcf6f2e74622a86/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_13405de38feaa1aa9b81092f326f9450e10cd301/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/ac135d2855329b76e30e6318862a3721dc1ef7a7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6ab48721afc5951fee1e3473a6e33d5c632437ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/b1f028c82fa37c9fb1129e6f162b578924aa4810/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dc42b4f2095e533d8353157faf83050eb5e56fa5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/5619878e743fbf736f48b1f2f77f7998b6359162/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4113dac112590bc5a351e995132ba8ad8876ce32/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_ddc8471d306933bf9d607a39258276d965f65412/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/a8882167f9f151687e12195b73fce4cca829d4bd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4052cc24ee0f3ec52cdff1ee071a40da18470b96/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/b1f85a3ab356fba9c4d094f5811017bb5184f5a4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9c3e45128ee0dc32bfe7429c9f2efc786f904459/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/db31ccd41f8cf1a0419068abedd17a468c553850/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5885fdaa1e6e1e361059ebf0c1664c9217d648b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_14310e4927ab0bef6d1a63fc4d7d0f94b3ed5c58/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/itscap/.android/build-cache/71ade17ce97388e8e211e9e48b479ae1e5deb826/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2f46f78a06e477245b0b42470ef8629b52dea011/classes.dex" />
+    </item>
+
+</items>
