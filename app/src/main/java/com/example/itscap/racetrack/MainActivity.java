@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +41,12 @@ public class MainActivity extends AppCompatActivity implements TrackAsyncTask.IH
 
         trackAsyncTask = new TrackAsyncTask(this);
         trackAsyncTask.getTracks();
+
+        String key = new ApiKeyHelper(this).getApiKeyValue("maps");
+        Log.d(TAG, "onCreate: KEY = " + key);
     }
+
+
 
 
     private void showTracks(List<Track> tracks){

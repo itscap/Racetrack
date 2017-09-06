@@ -1,0 +1,69 @@
+package com.example.itscap.racetrack;
+
+import android.content.Context;
+import android.util.JsonReader;
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by itscap on 9/6/17.
+ */
+
+public class ApiKeyHelper {
+
+    public final String TAG = "debugTag";
+    public final String apiKeyAssert = "api_keys.json";
+    private Context context;
+
+    public ApiKeyHelper(Context context){
+
+        this.context = context;
+    }
+
+
+    private String readAsset() {
+
+        String assetContent = "";
+        try {
+
+            InputStream is = context.getAssets().open(apiKeyAssert);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            assetContent = new String(buffer, "UTF-8");
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            Log.d(TAG, "getApiKey: Error => " + e);
+        }
+
+        return assetContent;
+    }
+
+    public String getApiKeyValue(String jsonKey){
+
+        String apiKey = "";
+
+        try {
+            JSONObject json = new JSONObject(readAsset());
+            apiKey = json.getString(jsonKey);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return apiKey;
+    }
+
+
+
+}
