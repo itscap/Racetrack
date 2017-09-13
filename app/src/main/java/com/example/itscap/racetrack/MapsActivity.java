@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -23,9 +24,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, TrackAsyncTask.IHttpRequest{
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, TrackAsyncTask.IHttpRequest {
 
     public final String TAG = "debugTag";
+    public final int CAMERA_SPEED = 600;//ms
 
     private ArrayList<Track> tracks;
     private RecyclerView recyclerView;
@@ -36,13 +38,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private SupportMapFragment mapFragment;
     private GoogleMap mMap;
     private LatLng currentMapPosition;
+    private CameraUpdate cameraLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         recyclerView = (RecyclerView) findViewById(R.id.calendarRecyclerView);
 
@@ -115,9 +117,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         currentMapPosition = new LatLng(Double.valueOf(track.getLatitude()),
                                         Double.valueOf(track.getLongitude()));
-        mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(currentMapPosition , 14.0f));
+        cameraLocation = CameraUpdateFactory.newLatLngZoom(currentMapPosition, 14f);
         mMap.addMarker(new MarkerOptions().position(currentMapPosition).title(track.getName()));
+        mMap.animateCamera(cameraLocation,CAMERA_SPEED,null);
+
     }
+
+
+
+    /**  ----CALLBACKS----*/
 
 
     @Override
