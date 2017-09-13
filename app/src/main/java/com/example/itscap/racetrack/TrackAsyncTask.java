@@ -24,7 +24,8 @@ public class TrackAsyncTask  extends AsyncHttpClient {
 
 
     public interface IHttpRequest{
-        public void onRequestCompleted(ArrayList <Track> tracks);
+        public void onRequestSuccess(ArrayList <Track> tracks);
+        public void onRequestFailed(String error);
     }
 
 
@@ -50,7 +51,16 @@ public class TrackAsyncTask  extends AsyncHttpClient {
 
                 if (response != null) {
                     parseJSON(response);
+                } else {
+                    mListner.onRequestFailed("Cannot retrieve data.");
                 }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+
+                mListner.onRequestFailed("Server request failded with status code " + statusCode);
             }
 
 
@@ -58,10 +68,9 @@ public class TrackAsyncTask  extends AsyncHttpClient {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
 
-                //TODO: show an alert instead
-                Log.d(TAG, "onFailure: Request Failed. StatusCode:"+statusCode+" Error: "+errorResponse);
-
+                mListner.onRequestFailed("Server request failded with status code " + statusCode);
             }
+
         });
 
     }
@@ -90,10 +99,11 @@ public class TrackAsyncTask  extends AsyncHttpClient {
                 tracks.add(track);
             }
 
-            mListner.onRequestCompleted(tracks);
+            mListner.onRequestSuccess(tracks);
 
-        } catch (Exception e){
+        } catch (Exception e) {
             Log.d(TAG, "onSuccess: JSONException =>" + e);
+            mListner.onRequestFailed("bad formatted json.");
         }
     }
 
