@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="7a4543af0107e40ea38dbe4a9ec7eb4a79a12b4e">
+        sha1="d34ed839f8e4da840f22ca0eb9383bb6b6b24f65">
         <dex dex="/home/itscap/Documents/AndroidStudioProjects/Racetrack/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7876ef75be735c74aa2f0e9905fafa8475a9c7b0/classes.dex" />
     </item>
     <item

@@ -2,18 +2,11 @@ package com.example.itscap.racetrack;
 
 import android.content.Context;
 import android.util.Log;
-
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.DataAsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-
 import cz.msebera.android.httpclient.Header;
 
 /**

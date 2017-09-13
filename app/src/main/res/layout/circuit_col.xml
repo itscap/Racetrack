@@ -4,26 +4,9 @@
     android:layout_height="match_parent"
     android:alpha="0.9">
 
-
-    <com.google.android.gms.maps.MapView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/mapView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#00000000"
-        android:translationZ="-10dp"
-        android:clickable="false"
-        map:uiCompass="true"
-        map:zOrderOnTop="true"
-        map:uiZoomControls="false">
-
-    </com.google.android.gms.maps.MapView>
-
     <RelativeLayout
         android:id="@+id/circuitInfo"
         android:layout_gravity="bottom"
-        android:layout_marginTop="-120dp"
         android:padding="16dp"
         android:translationZ="10dp"
         android:layout_width="match_parent"
@@ -36,7 +19,7 @@
             android:gravity="center_horizontal"
             android:text="Circuit Name"
             android:textColor="@color/colorTextClear"
-            android:textSize="38dp"
+            android:textSize="28dp"
             android:textStyle="bold"/>
 
         <TextView
@@ -46,7 +29,7 @@
             android:layout_below="@+id/tvCircuitName"
             android:gravity="center_horizontal"
             android:text="Country"
-            android:textSize="24dp"
+            android:textSize="22dp"
             android:textColor="@color/colorTextClear"/>
 
     </RelativeLayout>
