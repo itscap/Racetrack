@@ -28,7 +28,7 @@
             android:id="@+id/tvCountry"
             android:layout_below="@+id/tvCircuitName"
             android:gravity="center_horizontal"
-            android:text="Country"
+            android:text="Location"
             android:textSize="22dp"
             android:textColor="@color/colorTextClear"/>
 

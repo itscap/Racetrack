@@ -2,6 +2,7 @@ package com.example.itscap.racetrack;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -58,6 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         tracks = new ArrayList<>();
         snapHelper = new PagerSnapHelper();
 
+        showTutorial();
         getTracks();
         initMap(mapFragment);
 
@@ -133,6 +135,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(currentMapPosition).title(track.getName()));
         mMap.animateCamera(cameraLocation,CAMERA_SPEED,null);
 
+    }
+
+    private void showTutorial(){
+        Intent tutorialIntent = new Intent(this, TutorialActivity.class);
+        startActivity(tutorialIntent);
     }
 
     private void isLoading(Boolean loading){
