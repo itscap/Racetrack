@@ -1,4 +1,4 @@
-package com.example.itscap.racetrack;
+package com.example.itscap.racetrack.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -12,8 +12,15 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.itscap.racetrack.Dialogs.ErrorDialog;
+import com.example.itscap.racetrack.Helpers.SharedPreferencesHelper;
+import com.example.itscap.racetrack.R;
+import com.example.itscap.racetrack.Track;
+import com.example.itscap.racetrack.TrackAdapter;
+import com.example.itscap.racetrack.TrackAsyncTask;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,6 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public final String TAG = "debugTag";
     private static final String DELETE_DIALOG_TAG = "deleteDialogTag";
+    private static final int SETTINGS_ACTIVITY_RES = 1001;
     public final int CAMERA_SPEED = 600;//ms
 
     private ArrayList<Track> tracks;
@@ -39,13 +47,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private PagerSnapHelper snapHelper;
     private TrackAsyncTask trackAsyncTask;
     private Context context;
-    private ErrorDialog errorDialog;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private SupportMapFragment mapFragment;
-    private GoogleMap mMap;
     private LatLng currentMapPosition;
     private CameraUpdate cameraLocation;
+    private GoogleMap mMap;
+    private SupportMapFragment mapFragment;
+    private LinearLayout llCircle;
+    private ImageView settingsButton;
+    private RecyclerView.LayoutManager mLayoutManager;
     private ProgressDialog progressDialog;
+    private ErrorDialog errorDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +65,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         recyclerView = (RecyclerView) findViewById(R.id.calendarRecyclerView);
+        llCircle = (LinearLayout) findViewById(R.id.llCircle);
+        settingsButton = (ImageView) findViewById(R.id.imgSettings);
 
         context = getApplicationContext();
         tracks = new ArrayList<>();
@@ -76,7 +89,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                animateSettingsView();
+            }
+        });
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == SETTINGS_ACTIVITY_RES){
+            resetSettingsView();
+        }
     }
 
     private void getTracks(){
@@ -106,7 +133,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-
     private void showTracks(List<Track> tracks){
 
         if (tracks != null && tracks.size() > 0) {
@@ -125,8 +151,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-
-
     private void setMapPosition(Track track){
 
         currentMapPosition = new LatLng(Double.valueOf(track.getLatitude()),
@@ -137,9 +161,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    private void showTutorial(){
-        Intent tutorialIntent = new Intent(this, TutorialActivity.class);
-        startActivity(tutorialIntent);
+    private void showTutorial() {
+
+        if(new SharedPreferencesHelper(this).getPrefBool(SharedPreferencesHelper.TUTORIAL_PREF_KEY)) {
+            Intent tutorialIntent = new Intent(this, TutorialActivity.class);
+            startActivity(tutorialIntent);
+        }
     }
 
     private void isLoading(Boolean loading){
@@ -155,6 +182,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             progressDialog.dismiss();
         }
     }
+
+
+    private void animateSettingsView(){
+
+        settingsButton.setVisibility(View.INVISIBLE);
+        //recyclerView.setVisibility(View.INVISIBLE);
+
+        float scale = 40f;
+        int duration = 1200;
+        llCircle.animate()
+                .scaleXBy(scale)
+                .scaleYBy(scale)
+                .alpha(1)
+                .setDuration(duration)
+                .withEndAction(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent settingsIntent = new Intent(context, SettingsActivity.class);
+                        startActivityForResult(settingsIntent, SETTINGS_ACTIVITY_RES);
+                    }
+                });
+    }
+
+    private void resetSettingsView(){
+
+        float scale = 1f;
+        int duration = 600;
+        llCircle.animate()
+                .scaleX(scale)
+                .scaleY(scale)
+                .alpha(1)
+                .setDuration(duration)
+                .withEndAction(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        settingsButton.setVisibility(View.VISIBLE);
+                        //recyclerView.setVisibility(View.VISIBLE);
+                    }
+                });
+    }
+
 
     /**  ----CALLBACKS----*/
 

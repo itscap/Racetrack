@@ -20,6 +20,7 @@
             android:text="Circuit Name"
             android:textColor="@color/colorTextClear"
             android:textSize="28dp"
+            android:translationZ="16dp"
             android:textStyle="bold"/>
 
         <TextView

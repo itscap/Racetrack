@@ -85,7 +85,6 @@ public class TrackAsyncTask  extends AsyncHttpClient {
 
                 Track track = new Track();
                 JSONObject jsonTrack = response.getJSONObject(i);
-                Log.d(TAG, "onSuccess: TRACK => " + jsonTrack);
                 JSONObject location = jsonTrack.getJSONObject("location");
                 JSONObject length = jsonTrack.getJSONObject("circuitLength");
 

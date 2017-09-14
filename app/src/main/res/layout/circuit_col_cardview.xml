@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:minHeight="100dp"
+        android:translationZ="12dp">
+
+        <RelativeLayout
+            android:id="@+id/circuitInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCircuitName"
+                android:gravity="center_horizontal"
+                android:text="Circuit Name"
+                android:translationZ="12dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="28dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCountry"
+                android:layout_below="@+id/tvCircuitName"
+                android:gravity="center_horizontal"
+                android:text="Location"
+                android:textSize="22dp"
+                android:textColor="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

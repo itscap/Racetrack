@@ -1,4 +1,4 @@
-package com.example.itscap.racetrack;
+package com.example.itscap.racetrack.Helpers;
 
 import android.content.Context;
 import android.util.Log;

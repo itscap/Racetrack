@@ -1,7 +1,8 @@
-package com.example.itscap.racetrack;
+package com.example.itscap.racetrack.Activities;
 
 import android.os.Bundle;
 
+import com.example.itscap.racetrack.R;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 

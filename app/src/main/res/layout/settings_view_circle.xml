@@ -1,0 +1,24 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="36dp"
+    android:layout_height="36dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="24dp"
+    android:id="@+id/llCircle"
+    android:background="@drawable/circle"
+    android:layout_gravity="end"
+    android:gravity="center"
+    android:translationZ="16dp"
+    android:backgroundTint="@color/colorTextClear">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/imgSettings"
+        android:layout_margin="28dp"
+        android:tint="@color/colorPrimary"
+        android:src="@drawable/ic_settings_work_tool"/>
+
+
+</LinearLayout>

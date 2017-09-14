@@ -1,0 +1,22 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+    android:id="@+id/llCircle"
+    android:background="@drawable/circle"
+    android:layout_marginTop="-70dp"
+    android:layout_marginEnd="-70dp"
+    android:layout_gravity="end"
+    android:gravity="bottom|start"
+    android:alpha="0.9">
+
+    <ImageView
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:id="@+id/imgSettings"
+        android:layout_margin="28dp"
+        android:src="@drawable/ic_settings_work_tool"/>
+
+
+</LinearLayout>

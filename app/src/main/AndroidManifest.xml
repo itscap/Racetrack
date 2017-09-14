@@ -19,25 +19,23 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"
+            android:name=".Activities.MapsActivity"
             android:configChanges="orientation"
+            android:label="@string/app_name"
             android:screenOrientation="portrait">
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
-            android:name=".TutorialActivity"
-            android:theme="@style/Theme.Intro"
+            android:name=".Activities.TutorialActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Intro" />
+        <activity android:name=".Activities.SettingsActivity"
+            android:theme="@style/Theme.Design.NoActionBar"></activity>
     </application>
 
 </manifest>

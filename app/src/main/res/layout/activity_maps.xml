@@ -7,8 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorAccent"
     android:weightSum="1"
-    tools:context="com.example.itscap.racetrack.MainActivity">
-
+    tools:context="com.example.itscap.racetrack.Activities.MapsActivity">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -17,15 +16,17 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.itscap.racetrack.MapsActivity" />
+        tools:context="com.example.itscap.racetrack.Activities.MapsActivity">
 
+        <include layout="@layout/settings_view_circle"/>
+
+    </fragment>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-150dp"
-        android:translationZ="10dp"
         android:scrollbars="horizontal" />
 
 </LinearLayout>

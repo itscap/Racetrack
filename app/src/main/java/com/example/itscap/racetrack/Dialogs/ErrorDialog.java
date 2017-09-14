@@ -1,4 +1,4 @@
-package com.example.itscap.racetrack;
+package com.example.itscap.racetrack.Dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
