@@ -66,6 +66,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="Map style"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMapStyle"
+            android:layout_gravity="center_vertical"
+            android:text="Map Style"
+            android:textColor="@color/colorAccent"/>/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
@@ -84,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="Icons made by Egor Rumyantsev from Flaticon"
+            android:text="Icons made by Egor Rumyantsev and Freepik from Flaticon"
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="@color/colorPrimary"

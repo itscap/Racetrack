@@ -14,6 +14,7 @@ public class SharedPreferencesHelper {
 
     //Pref Keys
     public static final String TUTORIAL_PREF_KEY ="tutorial_pref_key";
+    public static final String MAP_STYLE_PREF_KEY ="map_style_pref_key";
 
     Context context;
     SharedPreferences sharedpreferences;
@@ -47,7 +48,7 @@ public class SharedPreferencesHelper {
     public int getPrefInt(String key){
 
         //Int default value is 0 so app won't crash..
-        return sharedpreferences.getInt(key,0);
+        return sharedpreferences.getInt(key,-1);
     }
 
     public void savePrefBool(String key, boolean value){
@@ -58,7 +59,7 @@ public class SharedPreferencesHelper {
 
     public Boolean getPrefBool(String key){
 
-        return sharedpreferences.getBoolean(key,false);
+        return sharedpreferences.getBoolean(key,true);
     }
 
 }

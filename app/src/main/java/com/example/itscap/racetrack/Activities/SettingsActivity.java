@@ -1,11 +1,10 @@
 package com.example.itscap.racetrack.Activities;
 
-import android.graphics.Color;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,8 +15,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     public final String TAG = "debugTag";
 
+    private CharSequence mapStyles[];
     private LinearLayout llTutorialSwitch;
-    private TextView tvTutorialOn,tvTutorialOff;
+    private TextView tvTutorialOn,tvTutorialOff, tvMapStyle;
     private SharedPreferencesHelper preferencesHelper;
 
     @Override
@@ -28,7 +28,9 @@ public class SettingsActivity extends AppCompatActivity {
         llTutorialSwitch = (LinearLayout) findViewById(R.id.llTutorialSwitch);
         tvTutorialOn = (TextView) findViewById(R.id.tvOn);
         tvTutorialOff = (TextView) findViewById(R.id.tvOff);
+        tvMapStyle = (TextView) findViewById(R.id.tvMapStyle);
 
+        mapStyles = new CharSequence[] {"Standard", "Retro", "Night", "Hybrid"};
         preferencesHelper = new SharedPreferencesHelper(this);
         initValues();
 
@@ -42,12 +44,37 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        tvMapStyle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                showMultipleChoiceMenu();
+            }
+        });
+
     }
 
-    private void initValues(){
+    private void initValues() {
 
         Boolean isTutorialON = preferencesHelper.getPrefBool(SharedPreferencesHelper.TUTORIAL_PREF_KEY);
         setupSwitchState(tvTutorialOn,tvTutorialOff,isTutorialON);
+
+        int mapStylePreference = preferencesHelper.getPrefInt(SharedPreferencesHelper.MAP_STYLE_PREF_KEY);
+        setupMapStyleTextView(mapStylePreference);
+
+    }
+
+    private void showMultipleChoiceMenu() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Chose a map style:");
+        builder.setItems(mapStyles, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                onMapStyleSelected(which);
+            }
+        });
+        builder.show();
     }
 
 
@@ -63,6 +90,45 @@ public class SettingsActivity extends AppCompatActivity {
             tvON.setTextColor(unselected);
             tvOFF.setTextColor(selected);
         }
+    }
+
+    private void setupMapStyleTextView(int mapStylePreference){
+
+        switch (mapStylePreference){
+            case R.raw.map_style_standard:
+                tvMapStyle.setText("Standard");
+                break;
+            case R.raw.map_style_retro:
+                tvMapStyle.setText("Retro");
+                break;
+            case R.raw.map_style_night:
+                tvMapStyle.setText("Night");
+                break;
+            default:
+                tvMapStyle.setText("Hybrid");
+        }
+    }
+
+    private void onMapStyleSelected(int which){
+
+        int mapStyle = -1;
+
+        switch (which){
+            case 0:
+                mapStyle = R.raw.map_style_standard;
+                break;
+            case 1:
+                mapStyle = R.raw.map_style_retro;
+                break;
+            case 2:
+                mapStyle = R.raw.map_style_night;
+                break;
+            default:
+                mapStyle = -1;//Hybrid is not actyally a style
+        }
+
+        preferencesHelper.savePrefInt(SharedPreferencesHelper.MAP_STYLE_PREF_KEY,mapStyle);
+        setupMapStyleTextView(mapStyle);
     }
 
 }

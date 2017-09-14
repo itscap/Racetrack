@@ -3,6 +3,7 @@ package com.example.itscap.racetrack.Activities;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -28,6 +29,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
@@ -102,6 +104,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == SETTINGS_ACTIVITY_RES){
+            setMapCustomStyle();
             resetSettingsView();
         }
     }
@@ -161,6 +164,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    private void setMapCustomStyle(){
+
+        int mapStyle = new SharedPreferencesHelper(this).getPrefInt(SharedPreferencesHelper.MAP_STYLE_PREF_KEY);
+        if(mapStyle == -1) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        } else {
+            try {
+
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                // Customise the styling of the base map using a JSON object defined
+                // in a raw resource file.
+                boolean success = mMap.setMapStyle(
+                        MapStyleOptions.loadRawResourceStyle(
+                                this, mapStyle));
+                if (!success) {
+                    Log.e(TAG, "Style parsing failed.");
+                }
+            } catch (Resources.NotFoundException e) {
+                Log.e(TAG, "Can't find style. Error: ", e);
+            }
+        }
+    }
+
     private void showTutorial() {
 
         if(new SharedPreferencesHelper(this).getPrefBool(SharedPreferencesHelper.TUTORIAL_PREF_KEY)) {
@@ -174,7 +200,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if(loading) {
             progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Loading");
-            progressDialog.setMessage("I'm starting the engine... ;)");
+            progressDialog.setMessage("I'm starting the engine...");
             progressDialog.setCancelable(false); //Disable dismiss by tapping outside of the dialog
             progressDialog.show();
         } else {
@@ -231,7 +257,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        setMapCustomStyle();
     }
 
 
