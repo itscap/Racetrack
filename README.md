@@ -1,6 +1,6 @@
 # Racetrack
 
-A simple Android App that shows the locations of the world main racing tracks <i>not in the usual way</i>:
+A simple Android App that shows the locations of world main racing tracks <i>not in the usual way</i>:
 
 <a href="https://gfycat.com/FearfulCheeryBonobo"><img src="https://thumbs.gfycat.com/FearfulCheeryBonobo-size_restricted.gif" title="source: gfycat.com" /></a>
 
